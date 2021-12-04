@@ -9,6 +9,10 @@ class Sagi {
         this.sagiBalance = 0;
     }
 
+    addMembership(membership) {
+        this.members.push(membership);
+    }
+
     description() {
 
         return `${this.name} has ${this.getSagiBalance()}`;
@@ -60,7 +64,10 @@ class Membership {
 
 
     }
-    
+    addNewMember() {
+
+
+    }
     description() {
         if (this.isInGoodStanting())
             return `${this.name} membership is in good standing`;
@@ -153,7 +160,6 @@ class Menu {
     removeMember() {
         this.sagi.removeMember();
     }
-
 }
 
 new Menu();
