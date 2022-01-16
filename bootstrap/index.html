@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <style>
+    .form{
+      background-color: rgb(175, 157, 194);
+      margin-left: 30px;
+      margin-right: 30px;
+      border-radius: 5px;
+    }
+    
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar- bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Lak Hair Extensions </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="About Us.html">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Shop</a></li>
+              <li><a class="dropdown-item" href="#">HAIR GUIDE</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Booking</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="bg-secondary text-white">
+    <h1>Front End Technologies Week 3 Coding Assignment</h1>
+    <h2 class="text-success">Coding Steps:</h2>
+    <ol>
+      <li> 	Create a new website using HTML and Bootstrap. The website must include the following:</li>
+      <li> 	A Bootstrap navbar</li>
+      <li>	A Bootstrap styled table</li>
+      <li> 	A Bootstrap styled form</li>
+      <li> 	At least 2 pages</li>
+      <li> 	Bootstrap grid used throughout to format elements</li>
+      <li> 	Elements should stack vertically when the window is small</li>
+    </ol>
+  </div>
+<div>
+  <table class="table table-success table-striped">
+   <tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+   </tr>
+   <tr>
+     <td>Ton</td>
+     <td>smith</td>
+     <td>tom.smith@ yahoo.com</td>
+     <td>(402) 444 1111</td>
+   </tr>
+   <tr>
+    <td>Ton</td>
+    <td>smith</td>
+    <td>tom.smith@ yahoo.com</td>
+    <td>(402) 444 1111</td>
+  </tr>
+  <tr>
+    <td>Ton</td>
+    <td>smith</td>
+    <td>tom.smith@ yahoo.com</td>
+    <td>(402) 444 1111</td>
+  </tr>
+  <tr>
+    <td>Ton</td>
+    <td>smith</td>
+    <td>tom.smith@ yahoo.com</td>
+    <td>(402) 444 1111</td>
+  </tr>
+  </table>
+</div>
+  <div class="form">
+    <h2 class="text-success">Here are some forms</h2>
+    <form class="row g-3">
+      <div class="col-md-4">
+        <label for="validationDefault01" class="form-label">First name</label>
+        <input type="text" class="form-control" id="validationDefault01" value="Etienne" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="validationDefault02" value="Nkoume" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefaultUsername" class="form-label">Username</label>
+        <div class="input-group">
+          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="validationDefault03" class="form-label">City</label>
+        <input type="text" class="form-control" id="validationDefault03" required>
+      </div>
+      <div class="col-md-3">
+        <label for="validationDefault04" class="form-label">State</label>
+        <select class="form-select" id="validationDefault04" required>
+          <option selected disabled value="">AL</option>
+          <option>AK</option>
+          <option>AZ</option>
+          <option>AR</option>
+          <option>CA</option>
+          <option>CZ</option>
+          <option>CO</option>
+          <option>CT</option>
+          <option>NE</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="validationDefault05" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="validationDefault05" required>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+          <label class="form-check-label" for="invalidCheck2">
+            Agree to terms and conditions
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+ <script src="node_modules/jquery/dist/jquery.js"></script>
+ <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
