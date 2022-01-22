@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body container background="blue"><br>
+    <h1>Liste of members</h1>
+    <div class="p-3 mb-2 bg-secondary text-white"> 
+        <h3>Use this form to add or Remove member in the list</h3>
+        <div class="card-body">
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="Member ID">Member ID</label>
+                    <input type="text" class="form-control" id="MemberID" placeholder="">
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="Last Name">Last Name</label>
+                    <input type="text" class="form-control" id="LastName" placeholder="">
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="First Name">First Name</label>
+                    <input type="text" class="form-control" id="FirstName" placeholder="">
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="DOB">Date Of Birth</label>
+                    <input type="date" class="form-control" id="DOB">
+                </div>
+            </div>
+            <button id="add" class="btn btn-primary form-controle" >Add Member</button>
+        </div>
+    </div>
+    <table id="members" class="table table-dark table-striped">
+        <tr>
+            <th>Member ID</th>
+            <th>Member Last Name</th>
+            <th>Member First Name</th>
+            <th>Member Date of Birth</th>
+            <th>Action</th>
+        </tr>
+
+    </table>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="Dom.js"></script>
+
+</body>
+</html>
