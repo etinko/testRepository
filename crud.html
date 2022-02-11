@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD APP</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="p-3 mb-2 bg-light text-dark"><br>
+    <div class="bg-secondary">
+        <h1> Members Table</h1>
+        <h2> Complete the following form to add new members</h2>
+    </div>
+<div class="card-body"> 
+        <form  onsubmit="createMember()">
+            <div class="mb-3">
+                <label for="memberId"class="form-label">Member ID</label>
+                <input type="text" class="form-control" name="memberId" id="memberId">
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" name="lastName" id="lastName">
+            </div>
+            <div class="mb-3">
+                <label for="firstName" class="form-label">first Name</label>
+                <input type="text" class="form-control" name="qfirstName" id="firstName">
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" name="dob" id="dob">
+            </div>
+
+            <div class="form_action--button">
+                <input class="btn btn-primary form controle" type="submit" value="Submit">
+                <input class="btn btn-info form controle" type="reset" value="Reset">
+            </div>
+        </form>
+</div>
+    <table class="table table-success table-striped" id="membersList">
+        
+            <tr>
+                <th>Member ID</th>
+                <th>Member Last Name</th>
+                <th>Member First Name</th>
+                <th>Member Date of Birth</th>
+                <th>Actions</th>
+            </tr>
+       
+      
+    </table>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="crud.js"></script>
+
+</body>
+</html>
