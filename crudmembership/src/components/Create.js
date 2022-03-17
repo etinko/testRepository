@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+import Read from './Read';
 import axios from "axios"; 
 import { useNavigate } from 'react-router-dom';
+import Update from "./Update";
 
 export default function Create(){
     const navigate = useNavigate();
@@ -9,7 +11,7 @@ export default function Create(){
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [dob, setDOB] = useState('');
-    const [platinum, setPlatinum] = useState(false);
+  
 
     const postData = () => {
         axios.post(`https://62219aaaafd560ea69b4a13e.mockapi.io/memberID`,{
@@ -17,43 +19,45 @@ export default function Create(){
             firstName,
             lastName,
             email,
-            dob, 
-            platinum,      
+            dob,       
         }).then(() =>{
             navigate.push('/read')
         })
     }
     return(
+        <>
         <div className="create">
             <div className="form-floating mb-3">
                  <input type="memberID" className="form-control" id="floatingInput" placeholder="memberID" onChange={(e) => setMemberID(e.target.value)}></input>
-                 <label for="floatingInput">MemberID</label>
+                 <label>Member ID</label>
             </div>
             <div className="form-floating mb-3">
                 <input type="firstName" className="form-control" id="floatingInput" placeholder="name" onChange={(e) => setFirstName(e.target.value)}></input>
-                <label for="floatingInput">First Name</label>
+                <label>First Name</label>
             </div>
             <div className="form-floating mb-3">
                 <input type="lastName" className="form-control" id="floatingInput" placeholder="name" onChange={(e) => setLastName(e.target.value)}></input>
-                <label for="floatingInput">Last Name</label>
+                <label>Last Name</label>
             </div>
             <div className="form-floating mb-3">
                 <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)}></input>
-                <label for="floatingInput">Email address</label>
+                <label>Email address</label>
             </div>
             <div className="form-floating mb-3">
                 <input type="date" className="form-control" id="floatingInput" placeholder="dob" onChange={(e) => setDOB(e.target.value)}></input>
-                <label for="floatingInput">DOB</label>
+                <label>DOB</label>
             </div>
             <div className="form-floating mb-3">
-                <form>
-                    <checkbox label= 'Platinum Member' onChange={(e) => setPlatinum(!platinum)}/>
-                </form>
             </div>
             <div>
             <button type="button" className="btn btn-primary" onClick={postData}>Submit</button>
             </div>
+            
 
         </div>
+        <Read/>
+        
+        </>
     );
+   
 }

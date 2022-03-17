@@ -1,28 +1,35 @@
 import './App.css';
+import {Nav, Navbar, Container} from 'react-bootstrap';
 import Create from './components/Create';
 import Read from './components/Read';
 import Update from './components/Update';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Route,Routes } from 'react-router-dom'
 
 
 function App() {
   return (
-    <router>
-      <div className="main">
-          <h2 className="main-header">React Crud Operations</h2>
+    <Router>
+      <>
+      <Navbar bg="primary" variant="dark">
+    <Container>
+    <Navbar.Brand href="#home">CRUD APP</Navbar.Brand>
+    <Nav className="me-auto">
+      <Nav.Link href="/">Create</Nav.Link>
+      <Nav.Link href="/read">Read</Nav.Link>
+      <Nav.Link href="/update">Update</Nav.Link>
+    </Nav>
+    </Container>
+  </Navbar>
+ 
+      </>
       
-        <div>
-            <Route exact path='/create' component={Create} />
-         </div>
-          <div>
-            <Route exact path='/read' component={Read} />
-          </div>
-        <div>
-            <Route path='/update' component={Update} />
-        </div>
+      <Routes>
         
-      </div>
-  </router>
+          <Route exact path='/' element = {<Create/>}></Route>
+          
+          <Route exact path='/update' element = {<Update/>}></Route>
+      </Routes>
+    </Router>
   );
 }
 

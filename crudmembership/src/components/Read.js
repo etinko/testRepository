@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { data } from 'jquery';
-import { Button} from 'react-bootstrap';
+import {Table, Button} from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -15,13 +15,13 @@ export default function Read() {
     }, []);
 
     const setData = (data) => {
-        let { id,memberID, firstName, lastName, email,platinum } = data;
+        let { id,memberID, firstName, lastName, email, dob} = data;
         localStorage.setItem('ID', id);
         localStorage.setItem('Member ID',memberID );
         localStorage.setItem('First Name', firstName);
         localStorage.setItem('Last Name', lastName);
         localStorage.setItem('Email', email );
-        localStorage.setItem('Member Type', platinum);
+        localStorage.setItem('DOB', dob );
     }
 
     const getData = () => {
@@ -39,18 +39,19 @@ export default function Read() {
     }
     return (
         <div>
-            <table class="table table-dark table-striped">
-                <tr>
-                    <th>Member ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Date of Birth</th>
-                    <th>Member Type</th>
-                    <th>Update</th>
-                    <th>Delete</th>
-                </tr>
-                <tb>
+            <Table striped bordered hover size= "sm">
+                <thead>
+                    <tr>
+                        <th>Member ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Date of Birth</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {APIData.map((data) =>{
                         return(
                     <tr>
@@ -59,25 +60,25 @@ export default function Read() {
                         <td>{data.lastName}</td>
                         <td>{data.email}</td>
                         <td>{data.dob}</td>
-                        <td>{data.platinum ? 'PLATINUM': 'Gold'}</td>
-                        <Link to = '/update'>
+                        <Link to = '/Update'>
                             <td>
-                                <Button className = 'btn btn-danger' onClick={() => setData(data)}>Update</Button>
+                                <Button className = 'btn btn-succes' onClick={() => setData(data)}>Update</Button>
                             </td>
                         </Link>
                         <td>
-                            <Button onClick={() => onDelete(data.id)}>Delete</Button>
+                            <Button className = 'btn btn-danger' onClick={() => onDelete(data.id)}>Delete</Button>
                         </td>
                     </tr>
 
                         )
                     })}
                     
-                </tb>
-  ...
-            </table>
+                </tbody>
+            </Table>
+            
         </div>
-    );
+
+    )
 
 
 

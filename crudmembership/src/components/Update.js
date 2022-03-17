@@ -13,55 +13,51 @@ export default function Update(){
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [dob, setDOB] = useState('');
-    const [platinum, setPlatinum] = useState(false);
+   
 
     useEffect(() =>{
-        setID(localStorage.setItem('ID'));
-        setMemberID(localStorage.setItem('Member ID'));
-        setFirstName(localStorage.setItem('First Name'));
-        setLastName(localStorage.setItem('Last Name'));
-        setEmail(localStorage.setItem('Email' ));
-        setPlatinum(localStorage.setItem('platinum'));
+        setID(localStorage.getItem('ID'));
+        setMemberID(localStorage.getItem('Member ID'));
+        setFirstName(localStorage.getItem('First Name'));
+        setLastName(localStorage.getItem('Last Name'));
+        setEmail(localStorage.getItem('Email'));
+        
     },[]);
 
     const updateAPIData = () => {
+        console.log("123");
         axios.put(`https://62219aaaafd560ea69b4a13e.mockapi.io/memberID/${id}`,{
             memberID,
             firstName,
             lastName,
             email,
-            dob, 
-            platinum,      
+            dob,       
         }).then(() =>{
-            navigate.push('read')
+          navigate('/')
+     
         })
     }
     return(
         <div className="create">
             <div className="form-floating mb-3">
-                 <input type="memberID" className="form-control" id="floatingInput" placeholder="memberID" onChange={(e) => setMemberID(e.target.value)}></input>
-                 <label for="floatingInput">MemberID</label>
+                 <input type="memberID" className="form-control" id="floatingInput" placeholder="memberID" onChange={(e) => setMemberID(e.target.value)} value= {memberID}></input>
+                 <label>MemberID</label>
             </div>
             <div className="form-floating mb-3">
-                <input type="firstName" className="form-control" id="floatingInput" placeholder="name" onChange={(e) => setFirstName(e.target.value)}></input>
-                <label for="floatingInput">First Name</label>
+                <input type="firstName" className="form-control" id="floatingInput" placeholder="name" onChange={(e) => setFirstName(e.target.value)}value= {firstName}></input>
+                <label>First Name</label>
             </div>
             <div className="form-floating mb-3">
-                <input type="lastName" className="form-control" id="floatingInput" placeholder="name" onChange={(e) => setLastName(e.target.value)}></input>
-                <label for="floatingInput">Last Name</label>
+                <input type="lastName" className="form-control" id="floatingInput" placeholder="name" onChange={(e) => setLastName(e.target.value)}value= {lastName}></input>
+                <label>Last Name</label>
             </div>
             <div className="form-floating mb-3">
-                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)}></input>
-                <label for="floatingInput">Email address</label>
+                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)}value= {email}></input>
+                <label>Email address</label>
             </div>
             <div className="form-floating mb-3">
-                <input type="date" className="form-control" id="floatingInput" placeholder="dob" onChange={(e) => setDOB(e.target.value)}></input>
-                <label for="floatingInput">DOB</label>
-            </div>
-            <div className="form-floating mb-3">
-                <form>
-                    <checkbox label= 'Platinum Member' onChange={(e) => setPlatinum(!platinum)}/>
-                </form>
+                <input type="date" className="form-control" id="floatingInput" placeholder="dob" onChange={(e) => setDOB(e.target.value)}value= {dob}></input>
+                <label>DOB</label>
             </div>
             <div>
             <button type="button" className="btn btn-primary" onClick={updateAPIData}>Update</button>
