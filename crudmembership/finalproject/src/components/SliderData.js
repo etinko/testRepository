@@ -1,0 +1,26 @@
+export const SliderData = [
+    {
+        image:
+        'https://i.insider.com/5db20821045a3157903e54c3?width=1000&format=jpeg&auto=webp'
+    },
+    {
+        image:
+        'https://i0.wp.com/theluxurytravelexpert.com/wp-content/uploads/2014/01/rio-de-janeiro-brazil.jpg?fit=968%2C545&ssl=1'
+    },
+    {
+        image:
+        'https://media.cntraveler.com/photos/588a0a4bd4a40cdf1ed0b27a/master/w_2048,h_1536,c_limit/singapore-GettyImages-165845874.jpg'
+    },
+    {
+        image:
+        'https://www.trendrr.net/wp-content/uploads/2017/06/New-York.jpg'
+    },
+    {
+        image:
+        'https://thumbs.dreamstime.com/b/centre-douala-cameroun-one-central-places-people-circulating-motos-cars-daylight-40172599.jpg'
+    },
+    {
+        image:
+        'https://c8.alamy.com/comp/DDMAGM/unity-palacepresidential-palace-yaounde-cameroon-DDMAGM.jpg'
+    },
+]
